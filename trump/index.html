@@ -1,0 +1,252 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DAZN-style | SPECIAL REPORT: “Donald Trump Cancels the NFL” (Fictional)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Educational, fictional parody article styled like a sports news splash page." />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta property="og:title" content="SPECIAL REPORT: “Donald Trump Cancels the NFL” (Fictional)" />
+  <meta property="og:description" content="This is a school project. Fictional content. Not affiliated with DAZN or the NFL." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://example.vercel.app/" />
+  <meta name="theme-color" content="#000000" />
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --card:#111418;
+      --text:#e6e6e6;
+      --muted:#9aa3ad;
+      --accent:#00e5bf;
+      --danger:#ff3b30;
+      --border:#22262b;
+      --dazn:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      color:var(--text);
+      background:radial-gradient(1200px 800px at 10% -20%, #101417, #0a0a0a 40%) no-repeat,#0a0a0a;
+    }
+    .container{max-width:1050px;margin:auto;padding:16px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 0;border-bottom:1px solid var(--border);gap:12px
+    }
+    .brand{
+      display:flex;align-items:center;gap:14px
+    }
+    .brand .box{
+      width:44px;height:44px;border:2.5px solid var(--dazn);color:var(--dazn);
+      display:grid;place-items:center;font-weight:800;letter-spacing:.5px
+    }
+    .brand small{color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+    nav a{
+      color:var(--text);text-decoration:none;padding:6px 10px;border-radius:6px;border:1px solid transparent
+    }
+    nav a:hover{border-color:var(--border);background:#0f1216}
+    .notice{
+      margin:14px 0;padding:10px 12px;border:1px solid var(--border);border-left:4px solid var(--accent);
+      background:linear-gradient(180deg, rgba(0,229,191,.06), rgba(0,0,0,0));color:var(--text);font-size:.95rem
+    }
+    .notice strong{color:var(--accent)}
+    .ribbon{
+      position:fixed;right:-42px;top:16px;transform:rotate(35deg);
+      background:var(--danger);color:#fff;padding:8px 56px;font-weight:700;letter-spacing:.04em;z-index:9;
+      box-shadow:0 6px 16px rgba(255,59,48,.25)
+    }
+    .grid{
+      display:grid;grid-template-columns:2fr 1fr;gap:22px;margin-top:16px
+    }
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    article{
+      background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden
+    }
+    .hero{
+      padding:18px;border-bottom:1px solid var(--border);
+      display:flex;flex-direction:column;gap:8px;background:
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,0)),
+        radial-gradient(1200px 400px at 60% -10%, rgba(0,229,191,.06), transparent 50%);
+    }
+    .kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;font-weight:700}
+    h1{margin:.2rem 0 0;font-size:2.15rem;line-height:1.15}
+    .meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}
+    .badge{
+      display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);
+      border-radius:999px;padding:4px 10px;background:#0e1116;color:var(--muted);font-size:.8rem
+    }
+    .body{padding:18px;display:grid;gap:16px}
+    .body p{margin:0}
+    .pullquote{
+      margin:2px 0;padding:14px;border-left:3px solid var(--accent);background:#0d1115;border-radius:8px;color:#d8fff7
+    }
+    .byline{display:flex;align-items:center;gap:10px;color:var(--muted)}
+    .dot{width:4px;height:4px;background:var(--muted);border-radius:50%;display:inline-block;margin:0 8px}
+    aside{
+      display:grid;gap:16px
+    }
+    .card{
+      background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px
+    }
+    .card h3{margin:.2rem 0 6px;font-size:1rem}
+    .list{display:grid;gap:10px}
+    .list a{
+      display:grid;gap:4px;text-decoration:none;color:var(--text);
+      padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1317
+    }
+    .list a:hover{outline:2px solid #1b2026}
+    .tag{font-size:.75rem;color:var(--muted)}
+    footer{
+      margin:24px 0 8px;color:var(--muted);font-size:.85rem;text-align:center
+    }
+    .tools{display:flex;gap:10px;flex-wrap:wrap}
+    .tools button{
+      appearance:none;border:1px solid var(--border);background:#0e1216;color:var(--text);
+      padding:8px 12px;border-radius:10px;cursor:pointer
+    }
+    .tools button:hover{background:#10151a}
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"NewsArticle",
+    "headline":"SPECIAL REPORT: “Donald Trump Cancels the NFL”",
+    "datePublished":"2025-08-15",
+    "dateModified":"2025-08-15",
+    "author":{"@type":"Organization","name":"Student Project"},
+    "publisher":{"@type":"Organization","name":"DAZN-style (Unofficial Parody)"},
+    "genre":"Satire",
+    "isAccessibleForFree": true,
+    "inLanguage":"en",
+    "about":["Satire","School project","Sports media parody"],
+    "description":"Fictional educational article styled as a sports news page. Not real. Not affiliated with DAZN or the NFL."
+  }
+  </script>
+</head>
+<body>
+  <div class="ribbon">EDUCATIONAL PARODY</div>
+  <div class="container">
+    <header aria-label="Site header">
+      <div class="brand">
+        <div class="box" aria-label="DAZN-style box">DZ</div>
+        <div>
+          <div style="font-weight:800;letter-spacing:.04em">DAZN-style</div>
+          <small>Unofficial • Parody • Student work</small>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#" aria-current="page">Top Stories</a>
+        <a href="#">NFL</a>
+        <a href="#">Soccer</a>
+        <a href="#">Boxing</a>
+      </nav>
+    </header>
+
+    <div class="notice" role="note">
+      <strong>Important:</strong> This page is a <u>fictional school project</u>. It is not real news, not affiliated with DAZN, the NFL, or any public figure. Any resemblance to real events is coincidental.
+    </div>
+
+    <main class="grid">
+      <article aria-labelledby="headline">
+        <div class="hero">
+          <div class="kicker">Special Report • Satire</div>
+          <h1 id="headline">“Donald Trump Cancels the NFL” — What That Would Mean</h1>
+          <div class="meta">
+            <span class="byline">By Student Newsroom<span class="dot"></span><time datetime="2025-08-15">Aug 15, 2025</time></span>
+            <span class="badge" title="Fiction">Fiction</span>
+            <span class="badge" title="Satire">Satire</span>
+            <span class="badge" title="Education">Class Project</span>
+          </div>
+        </div>
+        <div class="body">
+          <p>
+            This article explores a <strong>hypothetical scenario</strong>: a U.S. president attempts to “cancel” the National Football League. In reality, the NFL is a private association of franchises governed by state, federal, and contractual law. A unilateral executive action to abolish a private league would trigger jurisdictional and constitutional barriers.
+          </p>
+          <p class="pullquote">
+            “Even in an extreme scenario, contracts, state laws, and antitrust rules would shape outcomes more than a single announcement.” — Classroom Brief
+          </p>
+          <p>
+            Consider three systems: <em>legal authority</em>, <em>economic incentives</em>, and <em>fan behavior</em>. Legal authority defines what the state can compel. Economic incentives drive owners, broadcasters, sponsors, and unions. Fan behavior determines demand. If any one system resists strongly, the league adapts rather than disappears.
+          </p>
+          <p>
+            Broadcasting is the leverage point. If networks and streamers lost rights overnight, replacement competitions would emerge. Players’ unions would contest contract impairment. Cities with stadium bonds would protect revenue streams. Insurers would price political risk. The likely output is <strong>fragmentation</strong> or <strong>rebranding</strong>, not cessation of professional football.
+          </p>
+          <p>
+            For the assignment, this page uses a DAZN-style layout while avoiding trademarks and clarifying non-affiliation. It aims to show <strong>headline framing</strong>, <strong>visual hierarchy</strong>, <strong>disclosure</strong>, and <strong>accessibility</strong>.
+          </p>
+
+          <div class="tools" aria-label="Share tools">
+            <button type="button" onclick="copyLink()">Copy link</button>
+            <button type="button" onclick="toggleContrast()">Toggle contrast</button>
+            <span id="copied" class="sr-only" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </article>
+
+      <aside aria-label="Related">
+        <div class="card">
+          <h3>Context</h3>
+          <p style="margin:0;color:var(--muted)">
+            Private leagues operate via contracts, collective bargaining, and media rights. Government actions face judicial review and constitutional limits. This is a <strong>fictional</strong> exploration.
+          </p>
+        </div>
+        <div class="card">
+          <h3>More to read</h3>
+          <div class="list">
+            <a href="#" aria-label="Media rights basics">
+              <span>Media Rights 101</span>
+              <span class="tag">Explainer • Fictional resource</span>
+            </a>
+            <a href="#" aria-label="Collective bargaining primer">
+              <span>Collective Bargaining Primer</span>
+              <span class="tag">Explainer • Fictional resource</span>
+            </a>
+            <a href="#" aria-label="How leagues are structured">
+              <span>How Pro Leagues Are Structured</span>
+              <span class="tag">Explainer • Fictional resource</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Student Project. Not affiliated with DAZN or the NFL. This page is satire for educational use only.
+    </footer>
+  </div>
+
+  <script>
+    const yearEl = document.getElementById('year'); yearEl.textContent = new Date().getFullYear();
+    function copyLink(){
+      navigator.clipboard.writeText(location.href).then(()=>{
+        const el = document.getElementById('copied');
+        el.textContent = 'Link copied';
+        setTimeout(()=> el.textContent = '', 1500);
+      });
+    }
+    function toggleContrast(){
+      const root = document.documentElement;
+      const dark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#0a0a0a';
+      if(dark){
+        root.style.setProperty('--bg','#ffffff');
+        root.style.setProperty('--card','#f6f7f9');
+        root.style.setProperty('--text','#14181c');
+        root.style.setProperty('--muted','#5c6773');
+        root.style.setProperty('--border','#e3e6ea');
+        document.body.style.background = '#ffffff';
+      }else{
+        root.style.removeProperty('--bg');
+        root.style.removeProperty('--card');
+        root.style.removeProperty('--text');
+        root.style.removeProperty('--muted');
+        root.style.removeProperty('--border');
+        document.body.style.background = '';
+      }
+    }
+  </script>
+</body>
+</html>
