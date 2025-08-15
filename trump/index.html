@@ -1,14 +1,14 @@
 <!-- index.html -->
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>DAZN-style | SPECIAL REPORT: “Donald Trump Cancels the NFL” (Fictional)</title>
+  <title>DAZN-style | Presidente Trump suspende NFL hasta nuevo aviso (Ficción)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Educational, fictional parody article styled like a sports news splash page." />
+  <meta name="description" content="Proyecto escolar ficticio con estética tipo portada deportiva." />
   <meta name="robots" content="noindex,nofollow" />
-  <meta property="og:title" content="SPECIAL REPORT: “Donald Trump Cancels the NFL” (Fictional)" />
-  <meta property="og:description" content="This is a school project. Fictional content. Not affiliated with DAZN or the NFL." />
+  <meta property="og:title" content="Presidente Trump suspende NFL hasta nuevo aviso (Ficción)" />
+  <meta property="og:description" content="Proyecto escolar. Contenido ficticio. Sin afiliación con DAZN ni la NFL." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://example.vercel.app/" />
   <meta name="theme-color" content="#000000" />
@@ -36,9 +36,7 @@
       display:flex;align-items:center;justify-content:space-between;
       padding:12px 0;border-bottom:1px solid var(--border);gap:12px
     }
-    .brand{
-      display:flex;align-items:center;gap:14px
-    }
+    .brand{display:flex;align-items:center;gap:14px}
     .brand .box{
       width:44px;height:44px;border:2.5px solid var(--dazn);color:var(--dazn);
       display:grid;place-items:center;font-weight:800;letter-spacing:.5px
@@ -58,13 +56,9 @@
       background:var(--danger);color:#fff;padding:8px 56px;font-weight:700;letter-spacing:.04em;z-index:9;
       box-shadow:0 6px 16px rgba(255,59,48,.25)
     }
-    .grid{
-      display:grid;grid-template-columns:2fr 1fr;gap:22px;margin-top:16px
-    }
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:22px;margin-top:16px}
     @media (max-width:900px){.grid{grid-template-columns:1fr}}
-    article{
-      background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden
-    }
+    article{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
     .hero{
       padding:18px;border-bottom:1px solid var(--border);
       display:flex;flex-direction:column;gap:8px;background:
@@ -78,6 +72,13 @@
       display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);
       border-radius:999px;padding:4px 10px;background:#0e1116;color:var(--muted);font-size:.8rem
     }
+    .lead{
+      display:grid;gap:10px;padding:16px;border-bottom:1px solid var(--border);background:#0f1317
+    }
+    .cta{
+      display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--border);
+      border-radius:10px;background:#0e1216;color:var(--text);font-weight:700;cursor:not-allowed
+    }
     .body{padding:18px;display:grid;gap:16px}
     .body p{margin:0}
     .pullquote{
@@ -85,12 +86,8 @@
     }
     .byline{display:flex;align-items:center;gap:10px;color:var(--muted)}
     .dot{width:4px;height:4px;background:var(--muted);border-radius:50%;display:inline-block;margin:0 8px}
-    aside{
-      display:grid;gap:16px
-    }
-    .card{
-      background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px
-    }
+    aside{display:grid;gap:16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
     .card h3{margin:.2rem 0 6px;font-size:1rem}
     .list{display:grid;gap:10px}
     .list a{
@@ -99,9 +96,7 @@
     }
     .list a:hover{outline:2px solid #1b2026}
     .tag{font-size:.75rem;color:var(--muted)}
-    footer{
-      margin:24px 0 8px;color:var(--muted);font-size:.85rem;text-align:center
-    }
+    footer{margin:24px 0 8px;color:var(--muted);font-size:.85rem;text-align:center}
     .tools{display:flex;gap:10px;flex-wrap:wrap}
     .tools button{
       appearance:none;border:1px solid var(--border);background:#0e1216;color:var(--text);
@@ -114,100 +109,109 @@
   {
     "@context":"https://schema.org",
     "@type":"NewsArticle",
-    "headline":"SPECIAL REPORT: “Donald Trump Cancels the NFL”",
+    "headline":"Presidente Trump suspende NFL hasta nuevo aviso",
     "datePublished":"2025-08-15",
     "dateModified":"2025-08-15",
-    "author":{"@type":"Organization","name":"Student Project"},
-    "publisher":{"@type":"Organization","name":"DAZN-style (Unofficial Parody)"},
-    "genre":"Satire",
+    "author":{"@type":"Organization","name":"Proyecto Estudiantil"},
+    "publisher":{"@type":"Organization","name":"DAZN-style (Parodia no oficial)"},
+    "genre":"Sátira",
     "isAccessibleForFree": true,
-    "inLanguage":"en",
-    "about":["Satire","School project","Sports media parody"],
-    "description":"Fictional educational article styled as a sports news page. Not real. Not affiliated with DAZN or the NFL."
+    "inLanguage":"es",
+    "about":["Sátira","Proyecto escolar","Parodia de medio deportivo"],
+    "description":"Artículo educativo y ficticio con estilo de portada deportiva. No es real. Sin relación con DAZN ni la NFL."
   }
   </script>
 </head>
 <body>
-  <div class="ribbon">EDUCATIONAL PARODY</div>
+  <div class="ribbon">PARODIA EDUCATIVA</div>
   <div class="container">
-    <header aria-label="Site header">
+    <header aria-label="Encabezado del sitio">
       <div class="brand">
-        <div class="box" aria-label="DAZN-style box">DZ</div>
+        <div class="box" aria-label="Caja estilo DAZN">DZ</div>
         <div>
           <div style="font-weight:800;letter-spacing:.04em">DAZN-style</div>
-          <small>Unofficial • Parody • Student work</small>
+          <small>No oficial • Parodia • Trabajo estudiantil</small>
         </div>
       </div>
-      <nav aria-label="Primary">
-        <a href="#" aria-current="page">Top Stories</a>
+      <nav aria-label="Principal">
+        <a href="#" aria-current="page">Portada</a>
         <a href="#">NFL</a>
-        <a href="#">Soccer</a>
-        <a href="#">Boxing</a>
+        <a href="#">Fútbol</a>
+        <a href="#">Boxeo</a>
       </nav>
     </header>
 
     <div class="notice" role="note">
-      <strong>Important:</strong> This page is a <u>fictional school project</u>. It is not real news, not affiliated with DAZN, the NFL, or any public figure. Any resemblance to real events is coincidental.
+      <strong>Importante:</strong> Esta página es un <u>proyecto escolar ficticio</u>. No es una noticia real y no tiene relación con DAZN, la NFL ni ninguna figura pública. Cualquier semejanza con hechos reales es coincidencia.
     </div>
 
     <main class="grid">
       <article aria-labelledby="headline">
         <div class="hero">
-          <div class="kicker">Special Report • Satire</div>
-          <h1 id="headline">“Donald Trump Cancels the NFL” — What That Would Mean</h1>
+          <div class="kicker">Fútbol Americano • Reporte Especial • Sátira</div>
+          <h1 id="headline">Presidente Trump suspende NFL hasta nuevo aviso</h1>
           <div class="meta">
-            <span class="byline">By Student Newsroom<span class="dot"></span><time datetime="2025-08-15">Aug 15, 2025</time></span>
-            <span class="badge" title="Fiction">Fiction</span>
-            <span class="badge" title="Satire">Satire</span>
-            <span class="badge" title="Education">Class Project</span>
+            <span class="byline">Publicado por <strong>Javier de Paz</strong><span class="dot"></span><time datetime="2025-08-15">15 Ago 2025</time></span>
+            <span class="badge" title="Ficción">Ficción</span>
+            <span class="badge" title="Sátira">Sátira</span>
+            <span class="badge" title="Educación">Proyecto de clase</span>
           </div>
         </div>
+
+        <!-- Texto pedido de la imagen (añadido tal cual y luego desarrollado) -->
+        <div class="lead">
+          <button class="cta" title="Botón ficticio, sin afiliación">¡Disfruta de toda la NFL en DAZN!</button>
+          <p><strong>La NFL es la liga profesional de fútbol americano</strong>, que triunfa cada año en todo el planeta.</p>
+          <p>Ha sido suspendida sin motivo alguno, mostrando poderes dictadores.</p>
+          <p><strong>La postemporada de playoffs está formada por 14 equipos</strong> en las dos conferencias.</p>
+        </div>
+
         <div class="body">
           <p>
-            This article explores a <strong>hypothetical scenario</strong>: a U.S. president attempts to “cancel” the National Football League. In reality, the NFL is a private association of franchises governed by state, federal, and contractual law. A unilateral executive action to abolish a private league would trigger jurisdictional and constitutional barriers.
+            Este artículo explora un <strong>escenario hipotético</strong>: un presidente de EE. UU. intenta “cancelar” la National Football League. En la realidad, la NFL es una asociación privada de franquicias regida por leyes estatales y federales, contratos y convenios colectivos. Una acción ejecutiva unilateral para abolir una liga privada enfrentaría barreras jurisdiccionales y constitucionales.
           </p>
           <p class="pullquote">
-            “Even in an extreme scenario, contracts, state laws, and antitrust rules would shape outcomes more than a single announcement.” — Classroom Brief
+            “Incluso en un escenario extremo, los contratos, las leyes estatales y las normas antimonopolio pesan más que un solo anuncio.”
           </p>
           <p>
-            Consider three systems: <em>legal authority</em>, <em>economic incentives</em>, and <em>fan behavior</em>. Legal authority defines what the state can compel. Economic incentives drive owners, broadcasters, sponsors, and unions. Fan behavior determines demand. If any one system resists strongly, the league adapts rather than disappears.
+            Piense en tres sistemas: <em>autoridad legal</em>, <em>incentivos económicos</em> y <em>comportamiento de la afición</em>. La autoridad legal define lo que el Estado puede exigir. Los incentivos económicos mueven a dueños, canales, patrocinadores y sindicatos. La afición determina la demanda. Si uno de estos sistemas se resiste con fuerza, la liga se adapta antes que desaparecer.
           </p>
           <p>
-            Broadcasting is the leverage point. If networks and streamers lost rights overnight, replacement competitions would emerge. Players’ unions would contest contract impairment. Cities with stadium bonds would protect revenue streams. Insurers would price political risk. The likely output is <strong>fragmentation</strong> or <strong>rebranding</strong>, not cessation of professional football.
+            La palanca clave es la retransmisión. Si cadenas y plataformas perdieran derechos de la noche a la mañana, surgirían competiciones sustitutivas. Los sindicatos de jugadores impugnarían la afectación de contratos. Las ciudades con bonos de estadios protegerían sus ingresos. Las aseguradoras tasarían el riesgo político. El resultado más probable sería <strong>fragmentación</strong> o <strong>rebranding</strong>, no el fin del fútbol profesional.
           </p>
           <p>
-            For the assignment, this page uses a DAZN-style layout while avoiding trademarks and clarifying non-affiliation. It aims to show <strong>headline framing</strong>, <strong>visual hierarchy</strong>, <strong>disclosure</strong>, and <strong>accessibility</strong>.
+            Para el encargo, esta página usa un diseño inspirado en DAZN, evita marcas registradas y deja clara la no afiliación. Demuestra <strong>jerarquía visual</strong>, <strong>encuadre de titulares</strong>, <strong>disclosure</strong> y <strong>accesibilidad</strong>.
           </p>
 
-          <div class="tools" aria-label="Share tools">
-            <button type="button" onclick="copyLink()">Copy link</button>
-            <button type="button" onclick="toggleContrast()">Toggle contrast</button>
+          <div class="tools" aria-label="Herramientas para compartir">
+            <button type="button" onclick="copyLink()">Copiar enlace</button>
+            <button type="button" onclick="toggleContrast()">Cambiar contraste</button>
             <span id="copied" class="sr-only" role="status" aria-live="polite"></span>
           </div>
         </div>
       </article>
 
-      <aside aria-label="Related">
+      <aside aria-label="Relacionado">
         <div class="card">
-          <h3>Context</h3>
+          <h3>Contexto</h3>
           <p style="margin:0;color:var(--muted)">
-            Private leagues operate via contracts, collective bargaining, and media rights. Government actions face judicial review and constitutional limits. This is a <strong>fictional</strong> exploration.
+            Las ligas privadas operan por contratos, negociación colectiva y derechos de medios. Las decisiones gubernamentales enfrentan revisión judicial y límites constitucionales. Esto es una exploración <strong>ficticia</strong>.
           </p>
         </div>
         <div class="card">
-          <h3>More to read</h3>
+          <h3>Más para leer</h3>
           <div class="list">
-            <a href="#" aria-label="Media rights basics">
-              <span>Media Rights 101</span>
-              <span class="tag">Explainer • Fictional resource</span>
+            <a href="#" aria-label="Conceptos de derechos de medios">
+              <span>Derechos de Medios 101</span>
+              <span class="tag">Explicador • Recurso ficticio</span>
             </a>
-            <a href="#" aria-label="Collective bargaining primer">
-              <span>Collective Bargaining Primer</span>
-              <span class="tag">Explainer • Fictional resource</span>
+            <a href="#" aria-label="Guía de negociación colectiva">
+              <span>Negociación Colectiva: Guía rápida</span>
+              <span class="tag">Explicador • Recurso ficticio</span>
             </a>
-            <a href="#" aria-label="How leagues are structured">
-              <span>How Pro Leagues Are Structured</span>
-              <span class="tag">Explainer • Fictional resource</span>
+            <a href="#" aria-label="Estructura de las ligas">
+              <span>Cómo se estructuran las ligas profesionales</span>
+              <span class="tag">Explicador • Recurso ficticio</span>
             </a>
           </div>
         </div>
@@ -215,7 +219,7 @@
     </main>
 
     <footer>
-      © <span id="year"></span> Student Project. Not affiliated with DAZN or the NFL. This page is satire for educational use only.
+      © <span id="year"></span> Proyecto Estudiantil. Sin afiliación con DAZN ni la NFL. Página de sátira para uso educativo.
     </footer>
   </div>
 
@@ -224,7 +228,7 @@
     function copyLink(){
       navigator.clipboard.writeText(location.href).then(()=>{
         const el = document.getElementById('copied');
-        el.textContent = 'Link copied';
+        el.textContent = 'Enlace copiado';
         setTimeout(()=> el.textContent = '', 1500);
       });
     }
