@@ -1,0 +1,254 @@
+<!-- index-espn.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>ESPN | NFL suspendida: versión oficial y dudas sobre posible intervención rusa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Página de parodia educativa con estética tipo ESPN sobre la suspensión ficticia de la NFL." />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta property="og:title" content="NFL suspendida: versión oficial y dudas sobre posible intervención rusa (Ficción)" />
+  <meta property="og:description" content="Proyecto escolar ficticio. No afiliado a ESPN ni a la NFL. Contenido satírico." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://example.vercel.app/espn" />
+  <meta name="theme-color" content="#cc0000" />
+  <style>
+    :root{
+      --espn-red:#cc0000;
+      --bg:#0b0b0b;
+      --card:#121418;
+      --text:#f2f2f2;
+      --muted:#9aa3ad;
+      --border:#22262b;
+      --accent:#ffd400;
+      --ok:#00e5bf;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      color:var(--text);
+      background:radial-gradient(1200px 800px at 10% -20%, #121418, #0b0b0b 40%) no-repeat,#0b0b0b;
+    }
+    .container{max-width:1120px;margin:auto;padding:0 16px}
+    /* Header estilo ESPN */
+    .topbar{
+      background:var(--espn-red);
+      color:#fff;
+      border-bottom:3px solid #a30000;
+    }
+    .brand{
+      display:flex;align-items:center;gap:14px;
+      padding:12px 0;
+    }
+    .wordmark{
+      font-weight:900;letter-spacing:.08em;text-transform:uppercase;
+      font-size:1.35rem;line-height:1;display:inline-block
+    }
+    .wordmark::before{
+      content:"";
+      display:inline-block;
+      width:10px;height:10px;background:#fff;margin-right:8px;transform:skewX(-18deg)
+    }
+    .subnav{
+      display:flex;gap:14px;flex-wrap:wrap;padding:8px 0 10px;border-top:1px solid #b50000
+    }
+    .subnav a{
+      color:#fff;text-decoration:none;font-weight:600;padding:6px 8px;border-radius:6px
+    }
+    .subnav a:hover{background:#a30000}
+    .ribbon{
+      position:fixed;right:-42px;top:16px;transform:rotate(35deg);
+      background:#ff3b30;color:#fff;padding:8px 56px;font-weight:800;letter-spacing:.04em;z-index:20;
+      box-shadow:0 6px 16px rgba(255,59,48,.25)
+    }
+    .notice{
+      background:#151a1f;border-bottom:1px solid var(--border);color:var(--muted);
+      padding:10px 0
+    }
+    main{padding:18px 0}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:22px}
+    @media (max-width:960px){.grid{grid-template-columns:1fr}}
+    article{
+      background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden
+    }
+    .hero{
+      padding:18px;border-bottom:1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,0)),
+        radial-gradient(1000px 360px at 60% -10%, rgba(204,0,0,.16), transparent 55%);
+      display:flex;flex-direction:column;gap:8px
+    }
+    .kicker{
+      color:#fff;background:var(--espn-red);
+      padding:4px 8px;border-radius:6px;display:inline-block;
+      font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.75rem
+    }
+    h1{margin:.25rem 0 0;font-size:2.1rem;line-height:1.15}
+    .meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}
+    .badge{
+      display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);
+      border-radius:999px;padding:4px 10px;background:#0e1216;color:var(--muted);font-size:.8rem
+    }
+    .lead{padding:16px;border-bottom:1px solid var(--border);background:#0f1317}
+    .lead strong{color:#fff}
+    .body{padding:18px;display:grid;gap:16px}
+    .body p{margin:0}
+    .pullquote{
+      margin:2px 0;padding:14px;border-left:4px solid var(--espn-red);
+      background:#0d1115;border-radius:8px;color:#ffecec;font-weight:700
+    }
+    .byline{display:flex;align-items:center;gap:10px;color:var(--muted)}
+    .dot{width:4px;height:4px;background:var(--muted);border-radius:50%;display:inline-block;margin:0 8px}
+    aside{display:grid;gap:16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
+    .card h3{margin:.2rem 0 6px;font-size:1rem}
+    .list{display:grid;gap:10px}
+    .list a{
+      display:grid;gap:4px;text-decoration:none;color:var(--text);
+      padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1317
+    }
+    .list a:hover{outline:2px solid #1b2026}
+    .tag{font-size:.75rem;color:var(--muted)}
+    footer{margin:24px 0 8px;color:var(--muted);font-size:.85rem;text-align:center}
+    .tools{display:flex;gap:10px;flex-wrap:wrap}
+    .tools button{
+      appearance:none;border:1px solid var(--border);background:#0e1216;color:var(--text);
+      padding:8px 12px;border-radius:10px;cursor:pointer
+    }
+    .tools button:hover{background:#10151a}
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"NewsArticle",
+    "headline":"NFL suspendida: versión oficial y dudas sobre posible intervención rusa",
+    "datePublished":"2025-08-15",
+    "dateModified":"2025-08-15",
+    "author":{"@type":"Person","name":"Javier de Paz"},
+    "publisher":{"@type":"Organization","name":"ESPN-estilo (Parodia no oficial)"},
+    "genre":"Sátira",
+    "inLanguage":"es",
+    "isAccessibleForFree": true,
+    "about":["Sátira","Proyecto escolar","Deportes"],
+    "description":"Cobertura estilo ESPN de la suspensión ficticia de la NFL con menciones a una posible intervención extranjera. No es real."
+  }
+  </script>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="brand">
+        <div class="wordmark" aria-label="ESPN estilo texto">ESPN</div>
+        <div style="font-size:.9rem;opacity:.9">Oficial</div>
+      </div>
+      <nav class="subnav" aria-label="Secciones">
+        <a href="#" aria-current="page">Portada</a>
+        <a href="#">NFL</a>
+        <a href="#">Fútbol Americano</a>
+        <a href="#">Videos</a>
+        <a href="#">Resultados</a>
+        <a href="#">Más</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="notice">
+    <div class="container">
+      Importante: esta página es una <strong>parodia educativa</strong>. No está afiliada a ESPN ni a la NFL. Todo es ficción.
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="grid">
+      <article aria-labelledby="headline">
+        <div class="hero">
+          <div class="kicker">Alerta • NFL</div>
+          <h1 id="headline">NFL suspendida “hasta nuevo aviso”; asoman versiones de posible intervención de Putin</h1>
+          <div class="meta">
+            <span class="byline">Por <strong>Nicolás Jorquera</strong><span class="dot"></span><time datetime="2025-08-15">15 Ago 2025</time></span>
+            <span class="badge" title="Ficción">NFL</span>
+          </div>
+        </div>
+
+        <div class="lead">
+          <p><strong>Resumen ESPN:</strong> Tras un paquete regulatorio de la Casa Blanca, la NFL confirmó la suspensión de la temporada. Cadenas y plataformas pausaron la programación, aseguradoras congelaron coberturas y los 32 propietarios votaron detener la actividad.</p>
+          <p>Fuentes legislativas y de seguridad consultadas para este ejercicio <em>ficticio</em> señalan que “no se descarta” la <strong>posible intervención de actores extranjeros, incluido el Kremlin</strong>, a través de presión informativa y litigios estratégicos. <strong>No hay verificación independiente</strong>; todo permanece bajo análisis.</p>
+        </div>
+
+        <div class="body">
+          <p>
+            El paquete incluyó una demanda antimonopolio sobre derechos audiovisuales, revisiones de licencias en la FCC y auditorías fiscales a estadios. La NFLPA, por su parte, aconsejó a los jugadores no presentarse hasta aclarar el marco contractual y de seguridad.
+          </p>
+
+          <p class="pullquote">
+            “La temporada queda detenida. Defenderemos a aficionados y jugadores.” — Comunicado de la liga<br>
+            “Se investigarán posibles influencias externas.” — Versión oficial
+          </p>
+
+          <p>
+            <strong>Ángulos clave ESPN-estilo:</strong> derechos de TV/streaming con cláusulas de fuerza mayor; riesgo en bonos municipales ligados a estadios; patrocinio, apuestas y hostelería activan provisiones de suspensión. La hipótesis de intervención rusa —mencionada por analistas— se centra en <em>campañas de desinformación</em> y <em>estrategias legales</em> para erosionar contratos; es una línea de investigación, no un hecho establecido.
+          </p>
+
+          <p>
+            Impacto macro: el parón comprime empleo temporal, turismo de juego y publicidad regional. A escala nacional, la actividad directa de la NFL es menor al 0,1% del PIB, pero los <em>efectos de arrastre</em> en ciudades sede y cadenas locales son significativos.
+          </p>
+
+          <div class="tools" aria-label="Herramientas">
+            <button type="button" onclick="copyLink()">Copiar enlace</button>
+            <span id="copied" class="sr-only" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </article>
+
+      <aside aria-label="Relacionado">
+        <div class="card">
+        </div>
+        <div class="card">
+          <h3>Contexto rápido</h3>
+          <p style="margin:0;color:var(--muted)">
+            La suspensión responde a frentes legales, regulatorios y comerciales. La hipótesis de injerencia extranjera está bajo revisión en este relato ficticio. No hay confirmación independiente.
+          </p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> ESPN
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year'); yearEl.textContent = new Date().getFullYear();
+    function copyLink(){
+      navigator.clipboard.writeText(location.href).then(()=>{
+        const el = document.getElementById('copied');
+        el.textContent = 'Enlace copiado';
+        setTimeout(()=> el.textContent = '', 1500);
+      });
+    }
+    function toggleContrast(){
+      const root = document.documentElement;
+      const isDark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#0b0b0b';
+      if(isDark){
+        root.style.setProperty('--bg','#ffffff');
+        root.style.setProperty('--card','#f6f7f9');
+        root.style.setProperty('--text','#14181c');
+        root.style.setProperty('--muted','#5c6773');
+        root.style.setProperty('--border','#e3e6ea');
+        document.body.style.background = '#ffffff';
+      }else{
+        root.style.removeProperty('--bg');
+        root.style.removeProperty('--card');
+        root.style.removeProperty('--text');
+        root.style.removeProperty('--muted');
+        root.style.removeProperty('--border');
+        document.body.style.background = '';
+      }
+    }
+  </script>
+</body>
+</html>
