@@ -1,0 +1,177 @@
+<!-- index.html (en tu nueva ruta) -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Hola Franco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg:#0f1220; --card:#151a2e; --text:#e9ecf1; --muted:#a6b0c3;
+      --accent:#6cf; --good:#34d399; --bad:#ef4444; --grid:#1e2448;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:radial-gradient(1000px 600px at 10% -10%, #1b2143 10%, var(--bg) 55%) no-repeat,var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    .container{max-width:980px;margin:auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+    h1{margin:.2rem 0;font-size:2rem}
+    a{color:var(--accent);text-decoration:none}
+    .card{background:var(--card);border:1px solid #222948;border-radius:14px;padding:16px}
+    .stack{display:grid;gap:16px}
+
+    /* Imagen fija */
+    .preview{
+      display:grid;place-items:center;min-height:160px;border:2px dashed #2a3361;border-radius:12px;background:#0f1533;
+    }
+    .preview img{max-width:100%;max-height:360px;border-radius:10px}
+
+    /* Juego: “Golpea al topo” 3x3 */
+    .game{display:grid;gap:14px}
+    .hud{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .hud .pill{background:#0e1636;border:1px solid #232b55;border-radius:999px;padding:6px 10px;color:var(--muted)}
+    .btn{appearance:none;border:1px solid #2b356b;background:#101a48;color:#eaf2ff;padding:8px 14px;border-radius:10px;cursor:pointer;font-weight:700}
+    .btn:hover{background:#13205a}
+    .grid{
+      display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;
+      width:min(520px,100%);margin:auto
+    }
+    .cell{
+      aspect-ratio:1/1;border-radius:12px;border:2px solid var(--grid);
+      background:linear-gradient(180deg,#121a3f,#0d1431);position:relative;overflow:hidden
+    }
+    /* Topo como imagen circular */
+    .mole{
+      position:absolute;left:0;right:0;bottom:0;margin:auto;
+      width:70%;aspect-ratio:1/1;border-radius:50%;
+      object-fit:cover;object-position:center;
+      transform:translateY(120%);transition:transform .12s;
+      box-shadow:0 10px 20px rgba(0,0,0,.35);user-select:none;pointer-events:none;
+    }
+    .cell.show .mole{transform:translateY(0)}
+    .toast{font-size:.95rem;color:var(--muted)}
+    .score-good{color:var(--good);font-weight:800}
+    .score-bad{color:var(--bad);font-weight:800}
+    footer{margin:22px 0 6px;text-align:center;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Hola Franco</h1>
+      <nav><a href="/">Volver al inicio</a></nav>
+    </header>
+
+    <div class="stack">
+
+      <!-- Imagen fija -->
+      <section class="card">
+        <h2 style="margin-top:0">Franco</h2>
+        <div class="preview" id="preview">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s"
+            alt="Imagen fija">
+        </div>
+      </section>
+
+      <!-- Juego simple y divertido: Whack-a-Mole -->
+      <section class="card game">
+        <div class="hud">
+          <div class="pill">Tiempo: <span id="time">30</span>s</div>
+          <div class="pill">Puntaje: <span id="score">0</span></div>
+          <div class="pill">Mejor: <span id="best">0</span></div>
+          <button id="startBtn" class="btn">Iniciar</button>
+          <button id="hardBtn" class="btn" title="Aumenta la dificultad">Dif ↑</button>
+          <span id="msg" class="toast"></span>
+        </div>
+        <div class="grid" id="grid">
+          <!-- 9 celdas con imagen de topo circular -->
+          <div class="cell"><img class="mole" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s" alt=""></div>
+          <div class="cell"><img class="mole" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s" alt=""></div>
+          <div class="cell"><img class="mole" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s" alt=""></div>
+          <div class="cell"><img class="mole" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s" alt=""></div>
+          <div class="cell"><img class="mole" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s" alt=""></div>
+          <div class="cell"><img class="mole" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s" alt=""></div>
+          <div class="cell"><img class="mole" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s" alt=""></div>
+          <div class="cell"><img class="mole" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s" alt=""></div>
+          <div class="cell"><img class="mole" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33GvbPJziOs-1mMwOjS_GJATmPV0_rFG-FA&s" alt=""></div>
+        </div>
+        <p class="toast">Reglas: haz clic en el topo que asoma. Evita hacer clic cuando no haya topo.</p>
+      </section>
+
+    </div>
+
+    <footer>© <span id="year"></span> Página de juego</footer>
+  </div>
+
+  <script>
+    // ====== Juego Whack-a-Mole ======
+    const grid = document.getElementById('grid');
+    const cells = Array.from(grid.querySelectorAll('.cell'));
+    const scoreEl = document.getElementById('score');
+    const bestEl = document.getElementById('best');
+    const timeEl = document.getElementById('time');
+    const startBtn = document.getElementById('startBtn');
+    const hardBtn = document.getElementById('hardBtn');
+    const msgEl = document.getElementById('msg');
+
+    let score = 0, best = Number(localStorage.getItem('best-whack'))||0;
+    let timeLeft = 30, timerId = null, loopId = null, speed = 850;
+
+    bestEl.textContent = best;
+
+    function randCell(){ return cells[Math.floor(Math.random()*cells.length)]; }
+
+    function showMole(){
+      cells.forEach(c=>c.classList.remove('show'));
+      randCell().classList.add('show');
+      loopId = setTimeout(showMole, Math.max(250, speed - score*10));
+    }
+
+    function start(){
+      clearTimeout(loopId); clearInterval(timerId);
+      score = 0; timeLeft = 30; speed = currentSpeed;
+      scoreEl.textContent = '0'; timeEl.textContent = timeLeft; msgEl.textContent='';
+      cells.forEach(c=>c.classList.remove('show'));
+
+      showMole();
+      timerId = setInterval(()=>{
+        timeLeft--; timeEl.textContent = timeLeft;
+        if(timeLeft<=0) end();
+      },1000);
+    }
+
+    function end(){
+      clearTimeout(loopId); clearInterval(timerId);
+      cells.forEach(c=>c.classList.remove('show'));
+      if(score>best){ best=score; localStorage.setItem('best-whack',best); bestEl.textContent=best; }
+      msgEl.innerHTML = `Fin. Puntaje: <span class="score-good">${score}</span>`;
+    }
+
+    // Puntuación por clic
+    grid.addEventListener('click', e=>{
+      const cell = e.target.closest('.cell');
+      if(!cell) return;
+      if(cell.classList.contains('show')){
+        score++; scoreEl.textContent = score;
+        cell.classList.remove('show');
+      }else{
+        score = Math.max(0, score-1);
+        scoreEl.innerHTML = `<span class="score-bad">${score}</span>`;
+      }
+    });
+
+    // Dificultad
+    let currentSpeed = 850;
+    hardBtn.addEventListener('click', ()=>{
+      currentSpeed = Math.max(350, currentSpeed-100);
+      hardBtn.textContent = `Dif ↑ (${Math.round(1000/currentSpeed)}x)`;
+      msgEl.textContent = 'Dificultad aumentada';
+    });
+
+    startBtn.addEventListener('click', start);
+
+    // Año
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
